@@ -2,10 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example2.school.myapplication" >
 
-
-    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
-    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
-    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission> <!-- i need this inorder to receive incoming sms-->
 
     <application
         android:allowBackup="true"
@@ -25,6 +22,7 @@
             </intent-filter>
         </activity>
 
+<!-- I register the Receiver -->
     <receiver android:name=".SMSReceiver">
         <intent-filter>
             <action android:name="android.provider.Telephony.SMS_RECEIVED" />
@@ -32,14 +30,6 @@
         </intent-filter>
     </receiver>
 
-
-
-
-
     </application>
-
-
-
-
 
 </manifest>
